@@ -2,26 +2,26 @@
 <div class="home-pages">
   <el-form ref="form" :model="searchForm":inline="true" style="padding: 10px 0px;">
     <el-form-item>
-      <el-input v-model="searchForm.name" placeholder="英文名/省/市/区"></el-input>
+      <el-input v-model="searchForm.keyword" placeholder="英文名/省/市/区"></el-input>
     </el-form-item>
     <el-form-item>
         <el-select v-model="searchForm.identity" placeholder="请选择身份" clearable >
-          <el-option v-for="(item,key) in this.config.identity" :label="item.name" value="item.id"></el-option>
+          <el-option v-for="(item,key) in this.config.identity" :label="item.name" :value="item.id"></el-option>
         </el-select>
     </el-form-item>
     <el-form-item>
         <el-select v-model="searchForm.grade" placeholder="请选择年级" clearable >
-          <el-option v-for="(item,key) in this.config.grade" :label="item.name" value="item.id"></el-option>
+          <el-option v-for="(item,key) in this.config.grade" :label="item.name" :value="item.id"></el-option>
         </el-select>
     </el-form-item>
     <el-form-item>
         <el-select v-model="searchForm.level" placeholder="请选择英语水平" clearable >
-          <el-option v-for="(item,key) in this.config.level" :label="item.name" value="item.id"></el-option>
+          <el-option v-for="(item,key) in this.config.level" :label="item.name" :value="item.id"></el-option>
         </el-select>
     </el-form-item>
     <el-form-item>
         <el-select v-model="searchForm.device" placeholder="请选择设备" clearable >
-          <el-option v-for="(item,key) in this.config.device" :label="item.name" value="item.id"></el-option>
+          <el-option v-for="(item,key) in this.config.device" :label="item.name" :value="item.id"></el-option>
         </el-select>
     </el-form-item>
     <el-date-picker v-model="searchForm.time_range" type="daterange" align="right" unlink-panels range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" :picker-options="pickerOptions2" class=""> </el-date-picker>
@@ -100,11 +100,12 @@ export default {
       let level = this.searchForm.level;
       let device = this.searchForm.device;
       let keyword = this.searchForm.keyword;
+      let grade = this.searchForm.grade;
       let page = this.page_cur;
       this.request({
         url: "/users/getUserPages",
         method: "get",
-        params:{page,time_range,identity,level,device,keyword}
+        params:{page,grade,time_range,identity,level,device,keyword}
       }).then(res => {
         let data = res.data;
         if (data.status == 1) {

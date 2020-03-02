@@ -14,6 +14,20 @@ var update = __webpack_require__("8bSs")("5dc6bdb2", content, true);
 
 /***/ }),
 
+/***/ "8CRb":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("EE1q");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("8bSs")("311f89d6", content, true);
+
+/***/ }),
+
 /***/ "ARoL":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -644,11 +658,12 @@ var publicData = {
       var level = this.searchForm.level;
       var device = this.searchForm.device;
       var keyword = this.searchForm.keyword;
+      var grade = this.searchForm.grade;
       var page = this.page_cur;
       this.request({
         url: "/users/getUserPages",
         method: "get",
-        params: { page: page, time_range: time_range, identity: identity, level: level, device: device, keyword: keyword }
+        params: { page: page, grade: grade, time_range: time_range, identity: identity, level: level, device: device, keyword: keyword }
       }).then(function (res) {
         var data = res.data;
         if (data.status == 1) {
@@ -693,14 +708,14 @@ var publicData = {
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/_vue-loader@13.5.0@vue-loader/lib/template-compiler?{"id":"data-v-7dcea058","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/_vue-loader@13.5.0@vue-loader/lib/selector.js?type=template&index=0!./src/views/dashboard/index.vue
-var dashboard_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home-pages"},[_c('el-form',{ref:"form",staticStyle:{"padding":"10px 0px"},attrs:{"model":_vm.searchForm,"inline":true}},[_c('el-form-item',[_c('el-input',{attrs:{"placeholder":"英文名/省/市/区"},model:{value:(_vm.searchForm.name),callback:function ($$v) {_vm.$set(_vm.searchForm, "name", $$v)},expression:"searchForm.name"}})],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择身份","clearable":""},model:{value:(_vm.searchForm.identity),callback:function ($$v) {_vm.$set(_vm.searchForm, "identity", $$v)},expression:"searchForm.identity"}},_vm._l((this.config.identity),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":"item.id"}})}))],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择年级","clearable":""},model:{value:(_vm.searchForm.grade),callback:function ($$v) {_vm.$set(_vm.searchForm, "grade", $$v)},expression:"searchForm.grade"}},_vm._l((this.config.grade),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":"item.id"}})}))],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择英语水平","clearable":""},model:{value:(_vm.searchForm.level),callback:function ($$v) {_vm.$set(_vm.searchForm, "level", $$v)},expression:"searchForm.level"}},_vm._l((this.config.level),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":"item.id"}})}))],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择设备","clearable":""},model:{value:(_vm.searchForm.device),callback:function ($$v) {_vm.$set(_vm.searchForm, "device", $$v)},expression:"searchForm.device"}},_vm._l((this.config.device),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":"item.id"}})}))],1),_vm._v(" "),_c('el-date-picker',{attrs:{"type":"daterange","align":"right","unlink-panels":"","range-separator":"至","start-placeholder":"开始日期","end-placeholder":"结束日期","picker-options":_vm.pickerOptions2},model:{value:(_vm.searchForm.time_range),callback:function ($$v) {_vm.$set(_vm.searchForm, "time_range", $$v)},expression:"searchForm.time_range"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":_vm.getLists}},[_vm._v("搜索")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning"},on:{"click":_vm.exportExcel}},[_vm._v("导出")])],1),_vm._v(" "),_c('el-table',{attrs:{"data":_vm.lists}},[_c('el-table-column',{attrs:{"label":"姓名","prop":"name","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"电话","prop":"phone","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"身份","prop":"identity","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"年级","prop":"grade","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"英语水平","prop":"level","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"设备","prop":"device","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"生日","prop":"birthday","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"英文名","prop":"english_name","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"省","prop":"province","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"市","prop":"city","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"区","prop":"area","align":"center"}})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.lists.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next","page-size":this.page_size,"current-page":this.page_cur,"total":this.page_total},on:{"current-change":_vm.pageChange}}):_vm._e()],1)],1)}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@13.5.0@vue-loader/lib/template-compiler?{"id":"data-v-1c434d7a","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/_vue-loader@13.5.0@vue-loader/lib/selector.js?type=template&index=0!./src/views/dashboard/index.vue
+var dashboard_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home-pages"},[_c('el-form',{ref:"form",staticStyle:{"padding":"10px 0px"},attrs:{"model":_vm.searchForm,"inline":true}},[_c('el-form-item',[_c('el-input',{attrs:{"placeholder":"英文名/省/市/区"},model:{value:(_vm.searchForm.keyword),callback:function ($$v) {_vm.$set(_vm.searchForm, "keyword", $$v)},expression:"searchForm.keyword"}})],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择身份","clearable":""},model:{value:(_vm.searchForm.identity),callback:function ($$v) {_vm.$set(_vm.searchForm, "identity", $$v)},expression:"searchForm.identity"}},_vm._l((this.config.identity),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择年级","clearable":""},model:{value:(_vm.searchForm.grade),callback:function ($$v) {_vm.$set(_vm.searchForm, "grade", $$v)},expression:"searchForm.grade"}},_vm._l((this.config.grade),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择英语水平","clearable":""},model:{value:(_vm.searchForm.level),callback:function ($$v) {_vm.$set(_vm.searchForm, "level", $$v)},expression:"searchForm.level"}},_vm._l((this.config.level),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',[_c('el-select',{attrs:{"placeholder":"请选择设备","clearable":""},model:{value:(_vm.searchForm.device),callback:function ($$v) {_vm.$set(_vm.searchForm, "device", $$v)},expression:"searchForm.device"}},_vm._l((this.config.device),function(item,key){return _c('el-option',{attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-date-picker',{attrs:{"type":"daterange","align":"right","unlink-panels":"","range-separator":"至","start-placeholder":"开始日期","end-placeholder":"结束日期","picker-options":_vm.pickerOptions2},model:{value:(_vm.searchForm.time_range),callback:function ($$v) {_vm.$set(_vm.searchForm, "time_range", $$v)},expression:"searchForm.time_range"}}),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":_vm.getLists}},[_vm._v("搜索")]),_vm._v(" "),_c('el-button',{attrs:{"type":"warning"},on:{"click":_vm.exportExcel}},[_vm._v("导出")])],1),_vm._v(" "),_c('el-table',{attrs:{"data":_vm.lists}},[_c('el-table-column',{attrs:{"label":"姓名","prop":"name","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"电话","prop":"phone","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"身份","prop":"identity","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"年级","prop":"grade","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"英语水平","prop":"level","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"设备","prop":"device","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"生日","prop":"birthday","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"英文名","prop":"english_name","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"省","prop":"province","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"市","prop":"city","align":"center"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"区","prop":"area","align":"center"}})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.lists.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next","page-size":this.page_size,"current-page":this.page_cur,"total":this.page_total},on:{"current-change":_vm.pageChange}}):_vm._e()],1)],1)}
 var dashboard_staticRenderFns = []
 var dashboard_esExports = { render: dashboard_render, staticRenderFns: dashboard_staticRenderFns }
 /* harmony default export */ var views_dashboard = (dashboard_esExports);
 // CONCATENATED MODULE: ./src/views/dashboard/index.vue
 function dashboard_injectStyle (ssrContext) {
-  __webpack_require__("PLN5")
+  __webpack_require__("8CRb")
 }
 var dashboard_normalizeComponent = __webpack_require__("/Xao")
 /* script */
@@ -758,6 +773,21 @@ var update = __webpack_require__("8bSs")("e43daa2a", content, true);
 
 /***/ }),
 
+/***/ "EE1q":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("BkJT")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.home-pages{position:relative;background:#eef7fd url('/static/bg-line.png') repeat-y ;height: 100vh;\n}\n.app-pagination{\n  float: right;\n}\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "FO02":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -780,20 +810,6 @@ exports.push([module.i, "\n.dashboard-editor-container {\n  background-color: #f
 
 /***/ }),
 
-/***/ "PLN5":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("ljqS");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("8bSs")("465e255f", content, true);
-
-/***/ }),
-
 /***/ "ioRn":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -805,21 +821,6 @@ if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var update = __webpack_require__("8bSs")("24db151e", content, true);
-
-/***/ }),
-
-/***/ "ljqS":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("BkJT")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.home-pages{position:relative;background:#eef7fd url('/static/bg-line.png') repeat-y ;height: 100vh;\n}\n.app-pagination{\n  float: right;\n}\r\n\r\n\r\n", ""]);
-
-// exports
-
 
 /***/ }),
 
