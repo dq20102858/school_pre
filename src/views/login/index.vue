@@ -1,30 +1,28 @@
 <template>
-    <div class="login-container">
-
-
-      <div class="login-box">
-   <el-row  :gutter="30">
-  <el-col :xs="24" :sm="12" :md="12" :lg="12">
-<div class="login-wel">
-        <img src="/src/assets/image/book.png" />
-      </div>
-  </el-col>
-   <el-col :xs="24" :sm="12" :md="12" :lg="12">
-        <el-form class="login-form" autoComplete="off" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
-
-            <el-form-item prop="username">
-                <i class="iconame"></i>
-                <el-input class="inputtxt" name="username" type="text" v-model="loginForm.username" autoComplete="off" placeholder="请输入用户名" />
-            </el-form-item>
-            <el-form-item prop="password">
-               <i class="icopwd"></i>
-                <el-input  class="inputtxt" name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on" placeholder="请输入密码" />
-            </el-form-item>
-            <el-button class="loginbtn" type="primary" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
-        </el-form>
-          </el-col>
-   </el-row>
-    </div></div>
+<div class="login-container">
+  <div class="login-box">
+    <el-row  :gutter="30">
+      <el-col :xs="24" :sm="12" :md="12" :lg="12">
+        <div class="login-wel">
+          <img :src="require('@/assets/image/book.png')" />
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="12" :md="12" :lg="12">
+      <el-form class="login-form" autoComplete="off" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
+          <el-form-item prop="username">
+              <i class="iconame"></i>
+              <el-input class="inputtxt" name="username" type="text" v-model="loginForm.username" autoComplete="off" placeholder="请输入用户名" />
+          </el-form-item>
+          <el-form-item prop="password">
+             <i class="icopwd"></i>
+              <el-input  class="inputtxt" name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on" placeholder="请输入密码" />
+          </el-form-item>
+          <el-button class="loginbtn" type="primary" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
+      </el-form>
+      </el-col>
+    </el-row>
+  </div>
+</div>
 </template>
 <script>
     // import { isvalidUsername } from '@/utils/validate'
@@ -115,7 +113,7 @@ input:-webkit-autofill {
 input:-webkit-autofill:focus {
  box-shadow: 0 0 0px 1000px white inset !important;
 }
-.el-button--primary{
+.login-container .el-button--primary{
   background-color: #cae6e8 !important;
   border-color: #cae6e8 !important
 }
