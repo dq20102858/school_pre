@@ -1,10 +1,8 @@
 <template>
     <el-scrollbar wrapClass="scrollbar-wrapper">
-     
+
         <el-menu mode="vertical" :show-timeout="200" :default-active="$route.path" :collapse="isCollapse" background-color="#157BB7" text-color="#bfcbd9" active-text-color="#409EFF">
-          <div class="nx-logo">
-        <img src="/static/aut.png"/>
-        <p>Keep apart</p>
+          <div class="nx-logo"></div>
       </div>
             <sidebar-item :routes="permission_routers"></sidebar-item>
         </el-menu>
