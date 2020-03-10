@@ -3388,7 +3388,7 @@ var store = __webpack_require__("IcnI");
 
 var host = window.location.host;
 // host = 'http://' + host
-host =  true ? 'http://' + host : 'http://school.nething.com';
+host =  true ? 'http://' + host : 'http://supercandy.nethingbigdata.com';
 var service = _axios_0_19_2_axios_default.a.create({
   baseURL: host, // api的base_url
   withCredentials: true,
