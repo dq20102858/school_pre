@@ -31,6 +31,7 @@
   <el-table :data="lists" >
       <el-table-column label="姓名"  prop="name" align="center"></el-table-column>
       <el-table-column label="电话"  prop="phone" align="center"></el-table-column>
+      <el-table-column label="课程编号"  prop="number" align="center"></el-table-column>
       <el-table-column label="身份"  prop="identity" align="center"></el-table-column>
       <el-table-column label="年级"  prop="grade" align="center"></el-table-column>
       <el-table-column label="英语水平"  prop="level" align="center"></el-table-column>
