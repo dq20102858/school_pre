@@ -1,4 +1,4 @@
-webpackJsonp([7],{
+webpackJsonp([8],{
 
 /***/ "+4G4":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -3159,7 +3159,7 @@ var constantRouterMap = [{
   children: [{
     path: '/redirect/:path*',
     component: function component() {
-      return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, "v86N"));
+      return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, "v86N"));
     }
   }]
 }, {
@@ -3171,7 +3171,7 @@ var constantRouterMap = [{
 }, {
   path: '/authredirect',
   component: function component() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, "+abo"));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, "+abo"));
   },
   hidden: true
 }, {
@@ -3204,6 +3204,9 @@ var asyncRouterMap = {
   },
   '/views/dashboard/index': function viewsDashboardIndex() {
     return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, "ARoL"));
+  },
+  '/views/images/index': function viewsImagesIndex() {
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, "DQC3"));
   }
 
 };
@@ -3389,6 +3392,7 @@ var store = __webpack_require__("IcnI");
 var host = window.location.host;
 // host = 'http://' + host
 host =  true ? 'http://' + host : 'http://supercandy.nethingbigdata.com';
+// host = process.env.NODE_ENV == 'production' ? 'http://' + host : 'http://school.nething.com'
 var service = _axios_0_19_2_axios_default.a.create({
   baseURL: host, // api的base_url
   withCredentials: true,
@@ -3406,7 +3410,7 @@ service.interceptors.request.use(function (config) {
 // 请求后进行统一处理
 service.interceptors.response.use(function (response) {
   vue_esm["default"].globalEvBus.$emit('hideLoading');
-  if (response.data.status == 0 && response.data.msg == '用户不合法') {
+  if (response.data.status == 0 && response.data.msg == '校验失败，请重新登录') {
     store["a" /* default */].dispatch('FedLogOut').then(function () {
       location.reload(); // 为了重新实例化vue-router对象 避免bug
     });

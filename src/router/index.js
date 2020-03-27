@@ -49,6 +49,7 @@ export const asyncRouterMap = {
 
   '/views/layout/Layout': () => import('@/views/layout/Layout'),
   '/views/dashboard/index': () => import('@/views/dashboard'),
+  '/views/images/index': () => import('@/views/images'),
 
 
 
